@@ -1,0 +1,8 @@
+key	value
+0	rest
+1	circular_cone
+2	cubic
+3	cylinder
+4	half_sphere
+5	hexagonal_cone
+6	pyramid

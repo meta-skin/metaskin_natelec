@@ -1,0 +1,7 @@
+key	value
+0	rest
+1	pip_ver
+2	mcp_ver
+3	mcp_rot
+4	wrist_ver
+5	wrist_rot

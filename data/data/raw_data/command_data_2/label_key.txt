@@ -1,0 +1,6 @@
+key	value
+0	rest
+68	left
+92	right
+102	up
+59	down

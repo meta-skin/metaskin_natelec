@@ -1,0 +1,9 @@
+key	value
+0	rest
+1	PIP
+2	MCP
+3	PIP&MCP
+4	Wrist_ver
+5	Wrist_rot
+6	MCP&Wrist
+7	PIP&MCP&Wrist
