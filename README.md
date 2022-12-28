@@ -1,5 +1,5 @@
 # TD-C Learning: Time Dependent Contrastive Learning
-###  [Paper](https://www.nature.com/articles/s41928-022-00888-7) | [Video](link) 
+###  [Paper](https://www.nature.com/articles/s41928-022-00888-7) | [Video(keyboard)](https://static-content.springer.com/esm/art%3A10.1038%2Fs41928-022-00888-7/MediaObjects/41928_2022_888_MOESM6_ESM.mp4) | [Video(Object Recognition)](https://static-content.springer.com/esm/art%3A10.1038%2Fs41928-022-00888-7/MediaObjects/41928_2022_888_MOESM7_ESM.mp4)
 
 ## [A substrate-less nanomesh receptor with meta-learning for rapid hand task recognition](https://www.nature.com/articles/s41928-022-00888-7)  
  [Kyun Kyu Kim](link)\#<sup>1</sup>,
