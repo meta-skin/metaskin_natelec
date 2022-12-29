@@ -4,7 +4,7 @@
 ## [A substrate-less nanomesh receptor with meta-learning for rapid hand task recognition](https://www.nature.com/articles/s41928-022-00888-7)  
  [Kyun Kyu Kim](link)\#<sup>1</sup>,
  [Min Kim](link)\#<sup>2</sup>,
- [Sungho Jo](http://nmail.kaist.ac.kr/wordpress/index.php/professor-jo-sungho/))\*<sup>2</sup>,
+ [Sungho Jo](http://nmail.kaist.ac.kr/wordpress/index.php/professor-jo-sungho/)\*<sup>2</sup>,
  [Seung Hwan Ko](link)\*<sup>3</sup>,
  [Zhenan Bao](link)\*<sup>1</sup> <br>
  <sup>1</sup>Stanford, CA, USA, <sup>2</sup>Korea Advanced Institute of Science and Technology (KAIST), Daejeon, Korea, <sup>3</sup>Seoul National University, Seoul, Korea 
