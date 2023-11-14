@@ -3,7 +3,7 @@
 
 ## [A substrate-less nanomesh receptor with meta-learning for rapid hand task recognition](https://www.nature.com/articles/s41928-022-00888-7)  
  [Kyun Kyu Kim](http://kyunkyukim.com)\#<sup>1</sup>,
- [Min Kim](https://minkim.io/))\#<sup>2</sup>,
+ [Min Kim](https://minkim.io/)\#<sup>2</sup>,
  [Sungho Jo](http://nmail.kaist.ac.kr/wordpress/index.php/professor-jo-sungho/)\*<sup>2</sup>,
  [Seung Hwan Ko](link)\*<sup>3</sup>,
  [Zhenan Bao](http://baogroup.stanford.edu)\*<sup>1</sup> <br>
@@ -39,15 +39,15 @@ conda env create -f environment.yml
 ```
 
 # Runnig code
-Our training steps are divided into two seperate parts: 1. TD-C Learning, 2. Rapid Adaptation
-We provide codes and experiment environments for adopting our learning method, including data parsing, training code, and basic UI for collecting few-shot demonstration and making real-time inference. 
+Our training steps are divided into two separate parts: 1. TD-C Learning, 2. Rapid Adaptation
+We provide codes and experiment environments for adopting our learning method, including data parsing, training code, and basic UI for collecting few-shot demonstrations and making real-time inferences. 
 
 ## TD-C Learning
-TD-C learning is an unsupervised learning method that utilizes jittering signal augmentation and time-dependent contrastive learning to learn sensor representations with unlabeled random motion data. Here we show data format used to run our code and how to run our code with sample unlabeled data. 
+TD-C learning is an unsupervised learning method that utilizes jittering signal augmentation and time-dependent contrastive learning to learn sensor representations with unlabeled random motion data. Here we show the data format used to run our code and how to run our code with sample unlabeled data. 
 
 ### 1. Prepare unlabeled dataset
 To run the code, first prepare byte-encoded pickle files containing sensor signals in a dictionary data structure with key 'sensor' and value sequential sensor signals: {'sensor': array(s1, s2, ....)}
-Our code will read and parse all pickle files in ./data/train_data with above dictionary format. 
+Our code will read and parse all pickle files in ./data/train_data with the above dictionary format. 
 
 ### 2. Change hyperparameters
 We found out that the best-performing window size and data embedding size are dependent on the total amount of data, data collection frequency, and so on. You can change different hyperparameter settings by simply modifying values in params.py file. 
@@ -59,20 +59,20 @@ python tdc_train.py
 ```
 
 ## Rapid few-shot adaptation and real-time inference
-To allow pretrained model to be adapted to perform different tasks, we applied a few-shot transfer learning and metric-based inference mechanism for real-time inference. Here we provide basic UI system implemented with PyQT5 which allows users to collect few-shot demo and make real-time inference. 
+To allow the pre-trained model to be adapted to perform different tasks, we applied a few-shot transfer learning and metric-based inference mechanism for real-time inference. Here we provide a basic UI system implemented with PyQT5 which allows users to collect few-shot demos and make real-time inferences. 
 
 ### 1. Basic UI
 We provide basic UI code in ui directory
 
 The UI contains two buttons: 1. Collect Start, 2. Start Prediction and two Widgets: 1. status widget showing current prediction, 2. sensor widget showing current sensor values. 
 
-The system starts to record few-shot labeled data from demonstration when user press "Collect Start" button. After providing all required demonstration, make sure to press "Start Prediction" button, so that the system starts to transfer learn the model. 
+The system starts to record few-shot labeled data from the demonstration when the user presses the "Collect Start" button. After providing all required demonstrations, make sure to press the "Start Prediction" button, so that the system starts to transfer and learn the model. 
 
-### 2. Few-shot rapid adaptation, Data embedding and metric-based inference system
+### 2. Few-shot rapid adaptation, Data embedding, and metric-based inference system
 In transfer_learning_base.py file, we provide transfer learning, data embedding, and metric-based inference functions
 
-In our system, the system does transfer learning with provided few-shot demonstrations. The number of transfer epochs can be modified by changing transfer_epoch variable in params.py.
+In our system, the system does transfer learning with provided few-shot demonstrations. The number of transfer epochs can be modified by changing the transfer_epoch variable in params.py.
 
-After running a few transfer epoch, the system encode few-shot label data with transferred model to generate demo_embeddings. These embeddings are then used as references for Maximum Inner Product Search(MIPS). Given a window of sensor values, the model generates its embedding and phase variable. If the phase variable exceeds predefined threshold, the system perform MIPS and corresponding prediction is appeared on the status widget. Otherwise, the system regards the current state as a resting state. 
+After running a few transfer epochs, the system encodes few-shot label data with a transferred model to generate demo_embeddings. These embeddings are then used as references for Maximum Inner Product Search(MIPS). Given a window of sensor values, the model generates its embedding and phase variable. If the phase variable exceeds the predefined threshold, the system performs MIPS and the corresponding prediction appears on the status widget. Otherwise, the system regards the current state as a resting state. 
 
 
